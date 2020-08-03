@@ -14,6 +14,7 @@ class DashboardViewModel(private var serviceManagementRepository: ServiceManagem
 
     fun getDataServiceList() {
         uiScope.launch {
+            showProgress()
             val response = serviceManagementRepository.getServiceList()
             if (response.isSuccessful) {
                 val list = response.body() as ArrayList<ServiceType>
@@ -21,17 +22,20 @@ class DashboardViewModel(private var serviceManagementRepository: ServiceManagem
             } else {
                 dataServicesResponse.postValue(null)
             }
+            hideProgress()
         }
     }
 
     fun deleteService(id: Long) {
         uiScope.launch {
+            showProgress()
             val response = serviceManagementRepository.deleteService(id)
             if (response.isSuccessful) {
                 deleteResponse.postValue(response.body() as ServiceType)
             } else {
                 deleteResponse.postValue(null)
             }
+            hideProgress()
         }
     }
 }

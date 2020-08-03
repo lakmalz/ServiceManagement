@@ -8,11 +8,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.inex.servicemanagement.utils.Utils
 import com.inex.servicemanagement.R
 import com.inex.servicemanagement.base.BaseActivity
 import com.inex.servicemanagement.data.model.ServiceType
 import com.inex.servicemanagement.utils.Constant
+import com.inex.servicemanagement.utils.Utils
 import kotlinx.android.synthetic.main.activity_add_new_service.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +39,10 @@ class AddNewServiceActivity : BaseActivity() {
     }
 
     private fun liveObserveData() {
+        viewModel.progressStatus.observe(this, androidx.lifecycle.Observer {
+            progress_bar.visibility = it
+        })
+
         viewModel.serviceTypeResponse.observe(this, androidx.lifecycle.Observer {
             if (it != null) {
                 Utils.showMessage(
@@ -89,10 +93,11 @@ class AddNewServiceActivity : BaseActivity() {
                         selectedServiceItem?.id ?: null,
                         switch_active.isChecked,
                         edt_description.text.toString().trim(),
-                        edt_price.text.toString().trim().toDouble()
+                        edt_price.text.toString().trim().toDouble(),
+                        selectedServiceItem?.currency ?: Utils.getCurrencyInstance().currency.toString()
                     )
 
-                    viewModel.saveService(request)
+                    viewModel.saveOrUpdateService(request)
                 }
             }
         }

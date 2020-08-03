@@ -47,6 +47,10 @@ class DashboardActivity : BaseActivity() {
     }
 
     private fun initObservers() {
+        viewModel.progressStatus.observe(this, androidx.lifecycle.Observer {
+            progress_bar.visibility = it
+        })
+
         viewModel.dataServicesResponse.observe(this, Observer { response ->
             txt_no_items.visibility = View.GONE
             if (response.isNullOrEmpty()) {

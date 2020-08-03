@@ -11,25 +11,16 @@ class AddNewServiceViewModel(private var serviceManagementRepository: ServiceMan
 
     var serviceTypeResponse: MutableLiveData<ServiceType> = MutableLiveData()
 
-    fun saveService(request: ServiceType) {
+    fun saveOrUpdateService(request: ServiceType) {
         uiScope.launch {
+            showProgress()
             val response = serviceManagementRepository.saveOrUpdateService(request)
             if (response.isSuccessful) {
                 serviceTypeResponse.postValue(response.body())
             } else {
                 serviceTypeResponse.postValue(null)
             }
-        }
-    }
-
-    fun updateService(request: ServiceType) {
-        uiScope.launch {
-            val response = serviceManagementRepository.saveOrUpdateService(request)
-            if (response.isSuccessful) {
-                serviceTypeResponse.postValue(response.body())
-            } else {
-
-            }
+            hideProgress()
         }
     }
 
