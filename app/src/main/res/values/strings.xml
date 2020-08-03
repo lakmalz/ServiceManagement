@@ -11,7 +11,7 @@
     <string name="are_you_sure_you_want_to_delete">Are you sure? You want to delete?</string>
     <string name="price_is_required">Price is required.</string>
     <string name="description_is_required">Description is required.</string>
-    <string name="service_added_successful">Service added successful</string>
+    <string name="service_added_successful">Service saved/updated successful</string>
     <string name="item_successfully_updated">Item successfully updated.</string>
     <string name="item_successfully_deleted">Item successfully deleted.</string>
     <string name="fail_msg_item_insert">Item save failed.</string>
