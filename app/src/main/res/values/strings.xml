@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Service Management</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="alert">Alert</string>
+    <string name="oops_something_went_wrong">Something went wrong</string>
+    <string name="title_add_new_service">Add new service</string>
+    <string name="enter_price">Price</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_sure_you_want_to_delete_item">Are you sure? You want to delete item?</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure? You want to delete?</string>
+    <string name="price_is_required">Price is required.</string>
+    <string name="description_is_required">Description is required.</string>
+    <string name="service_added_successful">Service added successful</string>
+    <string name="item_successfully_updated">Item successfully updated.</string>
+    <string name="item_successfully_deleted">Item successfully deleted.</string>
+    <string name="fail_msg_item_insert">Item save failed.</string>
+    <string name="item_deleted_unsuccessful">Item delete unsuccessful</string>
+    <string name="ok">Ok</string>
+</resources>

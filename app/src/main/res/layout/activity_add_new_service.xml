@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/view_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="noScroll" />
+
+    <EditText
+        android:id="@+id/edt_description"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/dim_16dp"
+        android:background="@drawable/rounded_bg"
+        android:hint="Description"
+        android:padding="@dimen/dim_8dp"
+        android:inputType="textMultiLine"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="@dimen/dim_16dp"
+        android:layout_gravity="start" />
+
+
+    <EditText
+        android:id="@+id/edt_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/enter_price"
+        android:inputType="numberDecimal"
+        android:paddingRight="@dimen/dim_32dp"
+        android:paddingBottom="@dimen/dimen_24dp"
+        android:textSize="@dimen/font_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_description" />
+
+    <TextView
+        android:id="@+id/txt_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="@dimen/dim_8dp"
+        android:textSize="@dimen/font_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_price"
+        app:layout_constraintEnd_toEndOf="@+id/edt_price"
+        app:layout_constraintTop_toTopOf="@+id/edt_price"
+        android:layout_marginRight="@dimen/dim_8dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Active    "
+        android:textSize="@dimen/font_14sp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_price"
+        app:layout_constraintTop_toBottomOf="@+id/edt_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
